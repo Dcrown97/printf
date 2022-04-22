@@ -2,8 +2,8 @@
 
 /*
  * File: handlers.c
- * Auth: Efa-Iwa Eleng
- *       Babajide Kehinde
+ * Auth: Collins Viashima
+ *       Oluwadarasimi Aisimiyu
  */
 
 unsigned char handle_flags(const char *flag, char *index);
