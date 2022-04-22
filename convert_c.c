@@ -2,15 +2,16 @@
 
 /*
  * File: convert_c.c
- * Auth: Efa-Iwa Eleng
+ * Auth: Collins Viashima 
+	 Oluwadarasimi Aisimiyu 
  */
 
 unsigned int convert_c(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_percent(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_p(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 
 /**
  * convert_c - Converts an argument to an unsigned char and
@@ -25,7 +26,7 @@ unsigned int convert_p(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_c(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	char c;
 	unsigned int ret = 0;
@@ -55,7 +56,7 @@ unsigned int convert_c(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer (always 1).
  */
 unsigned int convert_percent(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	char percent = '%';
 	unsigned int ret = 0;
@@ -84,7 +85,7 @@ unsigned int convert_percent(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_p(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	char *null = "(nil)";
 	unsigned long int address;
