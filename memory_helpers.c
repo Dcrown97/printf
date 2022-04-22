@@ -2,7 +2,8 @@
 
 /*
  * File: memory_helpers.c
- * Auth: Efa-Iwa Eleng
+ * Auth: Collins Viashima
+	 Oluwadarasimi Aisimiyu 	
  */
 
 unsigned int _memcpy(buffer_t *output, const char *src, unsigned int n);
