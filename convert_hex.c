@@ -2,8 +2,8 @@
 
 /*
  * File: convert_hex.c
- * Auth: Efa-Iwa Eleng
- *	Babajide Kehinde
+ * Auth: Collins Viashima
+ *	Oluwadarasimi Aisimiyu
  */
 
 unsigned int convert_x(va_list args, buffer_t *output,
