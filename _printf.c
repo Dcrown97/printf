@@ -2,8 +2,8 @@
 
 /*
  * File: _printf.c
- * Auth: Efa-Iwa Eleng
- *	 Babajide Kehinde
+ * Auth: Collins Viashima
+ *	 Oluwadarasimi Aisimiyu
  */
 
 void cleanup(va_list args, buffer_t *output);
