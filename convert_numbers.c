@@ -2,18 +2,18 @@
 
 /*
  * File: convert_hex.c
- * Auth: Efa-Iwa Eleng
- *	Babajide Kehinde
+ * Auth: Collins Viashima
+ *	Oluwadarasimi Aisimiyu
  */
 
 unsigned int convert_di(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_b(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_u(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 unsigned int convert_o(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len);
+unsigned char flags, int wid, int prec, unsigned char len);
 
 /**
  * convert_di - Converts an argument to a signed int and
@@ -28,7 +28,7 @@ unsigned int convert_o(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_di(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	long int d, copy;
 	unsigned int ret = 0, count = 0;
@@ -41,11 +41,11 @@ unsigned int convert_di(va_list args, buffer_t *output,
 	if (len == SHORT)
 		d = (short)d;
 
-	/* Handle space flag */
+	/* Handles the space flag */
 	if (SPACE_FLAG == 1 && d >= 0)
 		ret += _memcpy(output, &space, 1);
 
-	if (prec <= 0 && NEG_FLAG == 0) /* Handle width */
+	if (prec <= 0 && NEG_FLAG == 0) /* Handles the width */
 	{
 		if (d == LONG_MIN)
 			count += 19;
@@ -59,7 +59,7 @@ unsigned int convert_di(va_list args, buffer_t *output,
 		count += (PLUS_FLAG == 1 && d >= 0) ? 1 : 0;
 		count += (SPACE_FLAG == 1 && d >= 0) ? 1 : 0;
 
-		/* Handle plus flag when zero flag is active */
+		/* Handles plus flag when zero flag is active */
 		if (ZERO_FLAG == 1 && PLUS_FLAG == 1 && d >= 0)
 			ret += _memcpy(output, &plus, 1);
 		/*Print negative sign when zero flag is active */
@@ -74,7 +74,7 @@ unsigned int convert_di(va_list args, buffer_t *output,
 	/* Print negative sign when zero flag is not active */
 	if (ZERO_FLAG == 0 && d < 0)
 		ret += _memcpy(output, &neg, 1);
-	/* Handle plus flag when zero flag is not active */
+	/* Handles the  plus flag when zero flag is not active */
 	if (ZERO_FLAG == 0 && (PLUS_FLAG == 1 && d >= 0))
 		ret += _memcpy(output, &plus, 1);
 
@@ -100,7 +100,7 @@ unsigned int convert_di(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_b(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	unsigned int num;
 
@@ -124,7 +124,7 @@ unsigned int convert_b(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_o(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int ret = 0;
@@ -162,7 +162,7 @@ unsigned int convert_o(va_list args, buffer_t *output,
  * Return: The number of bytes stored to the buffer.
  */
 unsigned int convert_u(va_list args, buffer_t *output,
-		unsigned char flags, int wid, int prec, unsigned char len)
+unsigned char flags, int wid, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int ret = 0;
